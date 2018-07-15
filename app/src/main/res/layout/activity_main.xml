@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <TextView
+        android:id="@+id/txt_input"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:background="@android:color/darker_gray"
+        android:gravity="bottom|right"
+        android:hint="3+0.1415926"
+        android:text="3+0.1415926"
+        android:textColor="@color/background_calculator_grey"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txt_result" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:gravity="bottom|right"
+        android:hint="3.1415926"
+        android:text="3.1415926"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_input"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_reset" />
+
+    <!-- C +- % / -->
+    <ImageButton
+        android:id="@+id/imgBtn_reset"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_changeSign"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_result"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_7"
+        app:srcCompat="@drawable/calculator_reset" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_changeSign"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_percent"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_reset"
+        app:layout_constraintTop_toBottomOf="@+id/txt_result"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_7"
+        app:srcCompat="@drawable/calculator_changesign" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_percent"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_devide"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_changeSign"
+        app:layout_constraintTop_toBottomOf="@+id/txt_result"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_7"
+        app:srcCompat="@drawable/calculator_percent" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_devide"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_percent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_result"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_7"
+        app:srcCompat="@drawable/calculator_divide" />
+
+    <!-- 7 8 9 X -->
+    <ImageButton
+        android:id="@+id/imgBtn_7"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_8"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_reset"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_4"
+        app:srcCompat="@drawable/calculator_7" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_8"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_7"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_9"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_reset"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_4"
+        app:srcCompat="@drawable/calculator_8" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_9"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_8"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_times"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_reset"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_4"
+        app:srcCompat="@drawable/calculator_9" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_times"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_reset"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_4"
+        app:srcCompat="@drawable/calculator_times" />
+
+    <!-- 4 5 6 - -->
+    <ImageButton
+        android:id="@+id/imgBtn_4"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_5"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_7"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_1"
+        app:srcCompat="@drawable/calculator_4" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_5"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_4"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_6"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_7"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_1"
+        app:srcCompat="@drawable/calculator_5" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_6"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_5"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_minus"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_7"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_1"
+        app:srcCompat="@drawable/calculator_6" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_minus"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_7"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_1"
+        app:srcCompat="@drawable/calculator_minus" />
+
+    <!-- 1 2 3 + -->
+    <ImageButton
+        android:id="@+id/imgBtn_1"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_2"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_4"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_0"
+        app:srcCompat="@drawable/calculator_1" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_2"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_1"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_3"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_4"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_0"
+        app:srcCompat="@drawable/calculator_2" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_3"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_2"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_plus"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_4"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_0"
+        app:srcCompat="@drawable/calculator_3" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_plus"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_4"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_0"
+        app:srcCompat="@drawable/calculator_plus" />
+
+    <!-- 0 . = -->
+    <ImageButton
+        android:id="@+id/imgBtn_0"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtn_point"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_1"
+        app:srcCompat="@drawable/calculator_0" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_point"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_0"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_1"
+        app:srcCompat="@drawable/calculator_point" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_equals"
+        style="@style/ImageButtonStyle"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/calculator_equals" />
+
+
+
+</android.support.constraint.ConstraintLayout>
